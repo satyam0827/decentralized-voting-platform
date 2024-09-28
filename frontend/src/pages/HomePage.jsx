@@ -5,7 +5,10 @@ import Vote from "./Vote"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { createCandidateAccount } from "../../../votingInit/main.mjs";
+
 const Homepage = () => {
+  
   const [walletAddress, setWalletAddress] = useState(null);
   const navigate = useNavigate();
 
@@ -29,6 +32,17 @@ const Homepage = () => {
 //       alert('No Diam Wallet found. Please install the Diam extension.');
 //     }
 //   };
+
+const [candidateWallet, setCandidateWallet] = useState();
+
+  const updateCandidateWallet = () => {
+    let wallet = createCandidateAccount()
+
+    console.log(wallet, "wallet generated")
+    setCandidateWallet(wallet);
+  };
+
+
 
 const handleConnectWallet = async () => {
     let public_address = '';

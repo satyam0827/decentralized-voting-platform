@@ -65,3 +65,5 @@ const Vote = ({ walletAddress }) => {
     );
 };
 
+
+export default Vote;
